@@ -20,8 +20,8 @@ const BookList = () => {
           <thead>
           <tr>
             <th>ID</th>
-            <th>Title</th>
-            <th>Author</th>
+            <th>Name</th>
+            <th>Description</th>
             <th>Action</th>
           </tr>
           </thead>
@@ -30,9 +30,9 @@ const BookList = () => {
             <tr key={book.id}>
               <td>{book.id}</td>
               <td>
-                <Link to={`/books/${book.id}`}>{book.title}</Link>
+                <Link to={`/books/${book.id}`}>{book.name}</Link>
               </td>
-              <td>{book.author}</td>
+              <td>{book.description}</td>
               <td>
                 <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteBook(book))}>
                   Delete Book

@@ -11,7 +11,6 @@ const Menu = () => (
         <ul className="nav navbar-nav">
           <li><Link to="/">List</Link></li>
           <li><Link to="/books/new">New Project</Link></li>
-          <li><Link to="/secret">Secret Projects</Link></li>
           <li><a href="http://localhost:8080/auth/realms/demo/account/#/resources" target="_blank">Collaboration</a></li>
           <li><a href="http://localhost:8080/auth/realms/demo/account/#/personal-info" target="_blank">Account</a></li>
         </ul>

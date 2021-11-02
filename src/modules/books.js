@@ -25,7 +25,7 @@ export const allBooks = () => ({
   type: LIST_BOOKS,
   payload: {
     request: {
-      url: '/demo/books',
+      url: '/v1/projects',
     },
   },
 });
@@ -36,7 +36,7 @@ export const addBook = book => {
     type: ADD_BOOK,
     payload: {
       request: {
-        url: '/demo/books',
+        url: '/v1/projects',
         method: HttpService.HttpMethods.POST,
         data: book,
       },
@@ -51,7 +51,7 @@ export const deleteBook = book => {
     payload: {
       book,
       request: {
-        url: `/demo/books/${book.id}`,
+        url: `/v1/projects/${book.id}`,
         method: HttpService.HttpMethods.DELETE,
       },
     },
