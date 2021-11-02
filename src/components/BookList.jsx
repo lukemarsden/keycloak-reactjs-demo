@@ -15,7 +15,7 @@ const BookList = () => {
   return (
     <div className="row">
       <div className="col-sm-12">
-        <h1>Books to Read Before You Die</h1>
+        <h1>Projects</h1>
         <table className="table table-striped">
           <thead>
           <tr>

@@ -5,14 +5,15 @@ const Menu = () => (
   <nav className="navbar navbar-default">
     <div className="container-fluid">
       <div className="navbar-header">
-        <Link className="navbar-brand" to="/">BookBox!</Link>
+        <Link className="navbar-brand" to="/">Helix</Link>
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">
           <li><Link to="/">List</Link></li>
-          <li><Link to="/books/new">New Book</Link></li>
-          <li><Link to="/secret">Secret Books</Link></li>
-          <li><Link to="/foo">No Match</Link></li>
+          <li><Link to="/books/new">New Project</Link></li>
+          <li><Link to="/secret">Secret Projects</Link></li>
+          <li><a href="http://localhost:8080/auth/realms/demo/account/#/resources" target="_blank">Collaboration</a></li>
+          <li><a href="http://localhost:8080/auth/realms/demo/account/#/personal-info" target="_blank">Account</a></li>
         </ul>
         <button className="btn btn-success navbar-btn navbar-right" style={{ marginRight: 0 }} onClick={() => UserService.doLogout()}>
           Logout

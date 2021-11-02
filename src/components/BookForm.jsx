@@ -6,18 +6,18 @@ import RenderOnRole from "./RenderOnRole";
 
 const BookForm = () => {
 
-  const [author, setAuthor] = useState('');
-  const [title, setTitle] = useState('');
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (!author || !title) {
+    if (!name || !description) {
       return;
     }
-    dispatch(addBook({ author, title }))
+    dispatch(addBook({ name, description }))
       .then(() => history.push("/"))
   };
 
@@ -25,16 +25,16 @@ const BookForm = () => {
     <div className="row">
       <div className="col-sm-6">
         <form onSubmit={handleSubmit}>
-          <h1>Add a new book:</h1>
+          <h1>New Project</h1>
           <div className="form-group">
-            <label htmlFor="author">Author</label>
-            <input type="text" className="form-control" placeholder="Author"
-                   value={author} onChange={(e) => setAuthor(e.target.value)}/>
+            <label htmlFor="name">Name</label>
+            <input type="text" className="form-control" placeholder="Name"
+                   value={name} onChange={(e) => setName(e.target.value)}/>
           </div>
           <div className="form-group">
-            <label htmlFor="title">Title</label>
-            <input type="text" className="form-control" placeholder="Title"
-                   value={title} onChange={(e) => setTitle(e.target.value)}/>
+            <label htmlFor="description">Description</label>
+            <input type="text" className="form-control" placeholder="Description"
+                   value={description} onChange={(e) => setDescription(e.target.value)}/>
           </div>
           <RenderOnRole roles={['user']}>
             <button type="submit" className="btn btn-primary">Add book</button>
