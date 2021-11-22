@@ -9,10 +9,10 @@ const Menu = () => (
       </div>
       <div id="navbar">
         <ul className="nav navbar-nav">
-          <li><Link to="/">List</Link></li>
+          <li><Link to="/">Projects</Link></li>
           <li><Link to="/books/new">New Project</Link></li>
-          <li><a href="http://localhost:8080/auth/realms/demo/account/#/resources" target="_blank">Collaboration</a></li>
-          <li><a href="http://localhost:8080/auth/realms/demo/account/#/personal-info" target="_blank">Account</a></li>
+          <li><a href="http://localhost:8080/auth/realms/demo/account/#/resources" target="_blank" rel="noreferrer">Collaboration</a></li>
+          <li><a href="http://localhost:8080/auth/realms/demo/account/#/personal-info" target="_blank" rel="noreferrer">Account</a></li>
         </ul>
         <button className="btn btn-success navbar-btn navbar-right" style={{ marginRight: 0 }} onClick={() => UserService.doLogout()}>
           Logout

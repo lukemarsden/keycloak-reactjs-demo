@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+//import { Link } from "react-router-dom";
 import { allBooks, deleteBook } from "../modules/books";
 
 const BookList = () => {
@@ -12,34 +12,40 @@ const BookList = () => {
     dispatch(allBooks())
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
+  // TODO: split this out into "my projects", "shared with me", "team/org
+  // projects", "sample projects"
+
+  // TODO: Filter by projects that _I_ (the currently logged in user) actually have
+  // read/write permission on
+
   return (
     <div className="row">
       <div className="col-sm-12">
         <h1>Projects</h1>
         <table className="table table-striped">
           <thead>
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Action</th>
-          </tr>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>ID</th>
+              <th>Owner</th>
+              <th>Action</th>
+            </tr>
           </thead>
           <tbody>
-          {books.map((book) => (
-            <tr key={book.id}>
-              <td>{book.id}</td>
-              <td>
-                <Link to={`/books/${book.id}`}>{book.name}</Link>
-              </td>
-              <td>{book.description}</td>
-              <td>
-                <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteBook(book))}>
-                  Delete Book
-                </button>
-              </td>
-            </tr>
-          ))}
+            {books.map((book) => (
+              <tr key={book._id}>
+                <td>{book.name}</td>
+                <td>{book.displayName}</td>
+                <td>{book._id}</td>
+                <td>{book.owner.id}</td>
+                <td>
+                  <button className="btn btn-xs btn-danger" onClick={() => dispatch(deleteBook(book))}>
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
